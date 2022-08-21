@@ -1,0 +1,17 @@
+/* project page styling */
+body{
+    background-color: #f5f5f5f;
+}
+.wrapper{
+    width: 80%;
+    display: flex;
+    width: auto;
+    justify-content: center;
+    gap: 3em;
+  }
+
+  .box{
+    background-color: #171c4d;
+    width:30%;
+    height:10em
+  }

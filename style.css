@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff&family=Lato&family=Ubuntu&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image:url('images/bg2.jpg');
+ cursor: pointer;
+
+    /* background-size: cover; */
+    background-color: black;
+    color: #f5f5f5;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+.container{
+  height: 100vh;
+  overflow: hidden;
+    width: 90%;
+    margin: auto;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2em;
+}
+
+
+
+header span h1{
+   
+}
+
+nav{
+    width:40%;
+    /* background-color:#f5f5f5; */
+    
+    padding:0 2em;
+    padding-bottom: 7em;
+     border-bottom-left-radius: 50%;
+     border-bottom-right-radius: 50%;
+    align-content: center;
+}
+nav ul{
+    display:flex;
+    justify-content: space-between;
+    list-style: none;
+    
+}
+
+nav ul li a{
+    text-decoration: none;
+    font-size:1.2rem;
+    color:#f5f5f5
+    
+}
+nav ul li span{
+    
+    font-size: 40px;
+    color: #f5f5f5;
+    font-family: 'DynaPuff', cursive
+}
+
+.container{
+    width: 90%;
+}
+.hero-section{
+  display: flex;
+}
+
+.intro{
+    text-align: center;
+    margin-top: 3em;
+    line-height: 4em;
+}
+.intro h1{
+    font-size: 50px;
+    letter-spacing: 3px;
+    text-transform: capitalize;
+}
+.intro h2{
+    font-size: 24px;
+}
+
+/*flip ANIMATION  */
+  @keyframes flip {
+    from {
+      -webkit-transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0)
+        rotate3d(0, 1, 0, -360deg);
+      transform: perspective(800px) scale3d(1, 1, 1) translate3d(0, 0, 0)
+        rotate3d(0, 1, 0, -360deg);
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out;
+
+    }
+  
+    40% {
+      -webkit-transform: perspective(400px) scale3d(1, 1, 1)
+        translate3d(0, 0, 100px) rotate3d(0, 1, 0, -190deg);
+      transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 150px)
+        rotate3d(0, 1, 0, -190deg);
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out;
+    }
+  
+    50% {
+      -webkit-transform: perspective(400px) scale3d(1, 1, 1)
+        translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg);
+      transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 150px)
+        rotate3d(0, 1, 0, -170deg);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
+  
+    80% {
+      -webkit-transform: perspective(400px) scale3d(0.95, 0.95, 0.95)
+        translate3d(0, 0, 0) rotate3d(0, 1, 0, 0deg);
+      transform: perspective(400px) scale3d(0.95, 0.95, 0.95) translate3d(0, 0, 0)
+        rotate3d(0, 1, 0, 0deg);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
+  
+    to {
+      -webkit-transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0)
+        rotate3d(0, 1, 0, 0deg);
+      transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0)
+        rotate3d(0, 1, 0, 0deg);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
+  }
+  .flip {
+    -webkit-backface-visibility: visible;
+    backface-visibility: visible;
+    -webkit-animation-name: flip;
+    animation-name: flip;
+    animation-duration:5s;
+  }
+  
+  .hamburger-menu {
+
+  }
+  #menu__toggle {
+    opacity: 0;
+  }
+  #menu__toggle:checked + .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menu__toggle:checked + .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0deg);
+  }
+  #menu__toggle:checked + .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu__toggle:checked ~ .menu__box {
+    right: 0 !important;
+  }
+  .menu__btn {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color:#f5f5f5;
+    transition-duration: 0.25s;
+  }
+  .menu__btn > span::before {
+    content: "";
+    top: -8px;
+  }
+  .menu__btn > span::after {
+    content: "";
+    top: 8px;
+  }
+  .menu__box {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    background-color:#171c4d;
+  
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    transition-duration: 0.25s;
+  }
+  .menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #f5f5f5;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    transition-duration: 0.25s;
+  }
+  .menu__item:hover {
+   color: red;
+  }
+  
+  .intro button{
+    font-size: 20px;
+   padding: .5em 4em;
+   color: #f5f5f5;
+   margin-top: 2em;
+   background-color :#af0c15;
+   outline: none;
+   border: none;
+   border-radius:20px;
+
+  }
+
+ 
+
+/* social media links */
+.links{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  right: 3em;
+  gap: 1em;
+  bottom: 3em;
+}
+.links a{
+  display:flex;
+  gap: 3px;
+  text-decoration: none;
+}
+
+.links i{
+  background-color:#f5f5f5;
+  padding: 5px;
+  border-radius: 50%;
+  font-size: 20px;
+  position: relative;
+}
+
+/* .links i:hover{
+  font-size: 30px;
+} */
+
+  /* MEDIA QUERIES */
+  
+  @media screen and (max-width: 875px) {
+    .hamburger-menu {
+      display: flex;
+    }
+  }
+
+  @media (max-width: 425px) {
+    
+     .container{
+      width:95%;
+      margin: auto;
+     }
+
+    header{
+        width:100%;
+    }
+
+    header h1{
+        font-size: 20px;
+    }  
+    nav{
+      
+    background-color: black;
+    padding:1em;
+    padding-bottom: 7em;
+     border-bottom-left-radius: 50%;
+     border-bottom-right-radius: 50%;
+    } 
+    nav ul{
+        display: flex;
+        flex-direction: column;
+    }
+    .hero-section{
+        margin-top: -13em;
+        
+    }
+    
+    .intro{
+        text-align: center;
+        margin-top:0;
+        line-height: 3em;
+    }
+    .intro h1{
+        font-size: 30px;
+        letter-spacing: 1px;
+    }
+}
+
+@media (max-width: 296px) {
+  body{
+   width: 100%;
+  }
+ .container{
+    width: 96%;
+  
+ }
+ nav{
+    display: none;
+ }
+
+ header h1{
+    font-size: 16px;
+    width: 40%;
+ }
+
+ .hero-section{
+    margin-top:5em;
+    width: 100%;
+ }
+
+ .intro h1{
+    width: 100%;
+    font-size: 25px;
+ }
+
+}
